@@ -1,7 +1,7 @@
 {
-  "name": "angularjs-seed",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "name": "AngularJSTutorial",
+  "description": "A starter project for AngularJS tutorial",
+  "repository": "https://github.com/winechess/angularjs_tutorial",
   "devDependencies": {
     "phantomjs" : "~1.9",
     "karma" : "~0.10",
