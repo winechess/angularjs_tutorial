@@ -5,8 +5,8 @@
         <title>My AngularJS Tutorial</title>
         <link rel="stylesheet" href="css/bootstrap.css"/>
     </head>
-    <body ng-app="">
-        <div class="container">
+    <body ng-app="app">
+        <div class="container" ng-controller="MyFirstCtrl">
             <div class="form-group">
                 <label title="Title">Title:</label>
                 <input type="text" class="form-control" ng-model="title"/>
@@ -16,5 +16,7 @@
             </div>
         </div>
         <script src="lib/angular/angular.js" type="text/javascript"></script>
+        <script src="js/app.js" type="text/javascript"></script>
+        <script src="js/controllers.js" type="text/javascript"></script>
     </body>
 </html>

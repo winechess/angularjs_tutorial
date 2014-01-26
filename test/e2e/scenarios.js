@@ -4,13 +4,19 @@
 
 describe('AngularJS Tutorial app', function() {
 
-  beforeEach(function() {
-    browser().navigateTo('AngularJSTutorial/index.html');
-  });
+    beforeEach(function() {
+        browser().navigateTo('AngularJSTutorial/index.html');
+    });
 
-
-  it('should contains output input value', function() {
-      input("title").enter('Title');
-      expect(element('h2').html()).toContain("Title");
-  });
+    describe('index page', function() {
+        
+        it('should load default value for title from controller', function(){
+           expect(element('h2').html()).toContain('This is title from controller'); 
+        });
+        
+        it('should output input value', function() {
+            input("title").enter('Title');
+            expect(element('h2').html()).toContain("Title");
+        });
+    });
 });
