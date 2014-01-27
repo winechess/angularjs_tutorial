@@ -9,14 +9,22 @@ describe('AngularJS Tutorial app', function() {
     });
 
     describe('index page', function() {
-        
-        it('should load default value for title from controller', function(){
-           expect(element('h2').html()).toContain('This is title from controller'); 
+
+        it('should load default values for title from service data', function() {
+            //console.log(element('h2'));
+            expect(element('div#first h2').html()).toContain('This is title from service');
+            expect(element('div#second h2').html()).toContain('This is title from service');
         });
-        
-        it('should output input value', function() {
-            input("title").enter('Title');
-            expect(element('h2').html()).toContain("Title");
+
+        it('values of titles must be always equals', function() {
+            
+            using("#first").input("film.title").enter('title1');
+            expect(element('div#first h2').html()).toContain("title1");
+            
+            using("#second").input("film.title").enter('title2');
+            expect(element('div#second h2').html()).toContain("title2");
+            
+            expect(element('div#first h2').html()).toEqual("title2");
         });
     });
 });
