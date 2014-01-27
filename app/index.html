@@ -14,7 +14,8 @@
                 <div class="form-group">
                     <label class="control-label col-lg-1">Search: </label>
                     <div class="col-lg-11">
-                        <input type="text" class="form-control" placeholder="Start type..."/>
+                        <input type="text" ng-model="query.$" class="form-control" 
+                               placeholder="Start type..."/>
                     </div>
                 </div>
 
@@ -31,7 +32,7 @@
                 </thead>
 
                 <tbody>
-                    <tr ng-repeat="film in imdb.films">
+                    <tr ng-repeat="film in imdb.films | filter: query">
                         <td>{{film.place}}</td>
                         <td>{{film.title}}</td>
                         <td>{{film.year}}</td>

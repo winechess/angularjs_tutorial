@@ -14,5 +14,10 @@ describe('AngularJS Tutorial app', function() {
             expect(repeater('tbody tr').count()).toBe(10);
         });
         
+        it('should filter films', function(){
+          input('query.$').enter('Побег из Шоушенка');
+          expect(repeater('tbody tr').count()).toBe(1);
+        });
+        
     });
 });
