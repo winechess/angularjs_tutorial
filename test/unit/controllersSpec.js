@@ -2,20 +2,20 @@
 
 describe('Controller', function() {
 
-    beforeEach(module('app'));
+    beforeEach(module('imdbApp'));
 
-    describe('SecondCtrl', function() {
+    describe('TopFilmsCtrl', function() {
 
         var scope, ctrl;
 
         beforeEach(inject(function($rootScope, $controller) {
             scope = $rootScope.$new();
-            ctrl = $controller('SecondCtrl', {'$scope': scope});
+            ctrl = $controller('TopFilmsCtrl', {'$scope': scope});
         }));
-        describe('reverse methood', function() {
-            it('should reverse a strng', function() {
-                expect(scope.reverse('ABCD')).toBe('DCBA');
-            });
+
+        it('should check contoller initialized with top 10 films', function() {
+            expect(scope.imdb.films.length).toBe(10);
         });
+
     });
 });

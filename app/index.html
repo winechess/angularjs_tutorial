@@ -1,37 +1,46 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="imdbApp">
     <head>
         <meta charset="utf-8">
         <title>My AngularJS Tutorial</title>
         <link rel="stylesheet" href="css/bootstrap.css"/>
     </head>
-    <body ng-app="app">
+    <body>
 
-        <!-- First controller scope-->
+        <div ng-controller="TopFilmsCtrl" class="container">
 
-        <div class="container" ng-controller="MyFirstCtrl" id="first">
-            <div class="form-group">
-                <label title="Title">Title:</label>
-                <input type="text" class="form-control" ng-model="film.title"/>
-            </div>
-            <div class="form-group">
-                <h2>{{film.title | reverse}}</h2>
-            </div>
+            <form class="form-horizontal">
+
+                <div class="form-group">
+                    <label class="control-label col-lg-1">Search: </label>
+                    <div class="col-lg-11">
+                        <input type="text" class="form-control" placeholder="Start type..."/>
+                    </div>
+                </div>
+
+            </form>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Place</th>
+                        <th>Title</th>
+                        <th>Year</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="film in imdb.films">
+                        <td>{{film.place}}</td>
+                        <td>{{film.title}}</td>
+                        <td>{{film.year}}</td>
+                        <td>{{film.rating}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
-        <!-- Second controller scope-->
-
-        <div class="container" ng-controller="SecondCtrl" id="second">
-            <div class="form-group">
-                <label title="Title">Title:</label>
-                <input type="text" class="form-control" ng-model="film.title"/>
-            </div>
-            <div class="form-group">
-                <h2>{{reverse(film.title)}}</h2>
-            </div>
-        </div>
-
-        <!-- JavaScript libraries imports -->
 
         <script src="lib/angular/angular.js" type="text/javascript"></script>
         <script src="js/app.js" type="text/javascript"></script>

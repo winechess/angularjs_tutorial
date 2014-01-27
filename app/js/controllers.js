@@ -1,11 +1,3 @@
-app.controller('MyFirstCtrl', function($scope, FirstService){
-   $scope.film = FirstService;
-});
-
-app.controller('SecondCtrl', function($scope, FirstService){
-    $scope.film = FirstService;
-    
-    $scope.reverse = function(string){
-        return string.split("").reverse().join("");
-    }
+app.controller('TopFilmsCtrl', function($scope, TopFilms){
+   $scope.imdb = TopFilms;
 });

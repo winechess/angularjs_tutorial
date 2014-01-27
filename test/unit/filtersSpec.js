@@ -2,7 +2,7 @@
 
 describe('Filters', function(){
    
-    beforeEach(module('app'));
+    beforeEach(module('imdbApp'));
     
     describe('reverse', function(){
        
