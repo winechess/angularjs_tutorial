@@ -32,7 +32,7 @@
                 </thead>
 
                 <tbody>
-                    <tr ng-repeat="film in imdb.films | filter: query">
+                    <tr ng-repeat="film in imdb.films | orderBy: 'title'">
                         <td>{{film.place}}</td>
                         <td>{{film.title}}</td>
                         <td>{{film.year}}</td>
