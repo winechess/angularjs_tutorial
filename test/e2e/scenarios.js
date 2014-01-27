@@ -13,7 +13,7 @@ describe('AngularJS Tutorial app', function() {
         it('should load default values for title from service data', function() {
             //console.log(element('h2'));
             expect(element('div#first h2').html()).toContain('This is title from service');
-            expect(element('div#second h2').html()).toContain('This is title from service');
+            expect(element('div#second h2').html()).toContain('ecivres morf eltit si sihT');
         });
 
         it('values of titles must be always equals', function() {
@@ -22,7 +22,7 @@ describe('AngularJS Tutorial app', function() {
             expect(element('div#first h2').html()).toContain("title1");
             
             using("#second").input("film.title").enter('title2');
-            expect(element('div#second h2').html()).toContain("title2");
+            expect(element('div#second h2').html()).toContain("2eltit");
             
             expect(element('div#first h2').html()).toEqual("title2");
         });
