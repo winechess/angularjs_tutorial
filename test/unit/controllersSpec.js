@@ -17,5 +17,10 @@ describe('Controller', function() {
             expect(scope.imdb.films.length).toBe(10);
         });
 
+        it('should if filter initialized with correct parameters', function(){
+           expect(scope.filter.orderBy).toEqual('place');
+           expect(scope.filter.sortBy).toEqual('+');
+           expect(scope.filter.limitTo).toEqual(10);
+        });
     });
 });
