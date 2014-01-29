@@ -16,7 +16,7 @@ describe('Filter', function(){
     describe('range', function(){
        
         it('should create array from 1 to 100', inject(function(rangeFilter){
-            expect(rangeFilter([], 100).length).toEqual(100);
+            expect(rangeFilter([], 1, 100).length).toEqual(100);
         }));
     });
     

@@ -42,8 +42,12 @@ describe('AngularJS Tutorial app', function() {
         });
         
         it('should limit films in table to 5', function() {
-            select('filter.limitTo').option(5);
+            select('filter.limitTo').option(4);
             expect(repeater('tbody tr').count()).toBe(5); 
+        });
+        
+        it('should find film directive in the page', function(){
+           expect(element('film').html()).toContain('This is film directive!!!'); 
         });
     });
 });
