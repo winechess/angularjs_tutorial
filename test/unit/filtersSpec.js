@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Filters', function(){
+describe('Filter', function(){
    
     beforeEach(module('imdbApp'));
     
@@ -11,6 +11,13 @@ describe('Filters', function(){
             expect(reverseFilter('12345')).toEqual('54321');
         }));
         
+    });
+    
+    describe('range', function(){
+       
+        it('should create array from 1 to 100', inject(function(rangeFilter){
+            expect(rangeFilter([], 100).length).toEqual(100);
+        }));
     });
     
 });

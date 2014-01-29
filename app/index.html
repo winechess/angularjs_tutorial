@@ -41,7 +41,7 @@
                     <label class="control-label col-lg-1">limit</label>
                     <div class="col-lg-2">
                         <select class="form-control" ng-model='filter.limitTo' 
-                                ng-options="i for i in [0,1,2,3,4,5,6,7,8,9,10]"></select>
+                                ng-options="i for i in [] | range: 10"></select>
                     </div>
                 </div>
 
@@ -69,7 +69,6 @@
                     </tr>
                 </tbody>
             </table>
-            <div id="test">1967</div>
         </div>
 
         
