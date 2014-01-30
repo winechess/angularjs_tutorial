@@ -58,7 +58,8 @@
                 </thead>
 
                 <tbody>
-                    <tr ng-repeat="film in imdb.films | filterTable: filter">
+                    <tr ng-repeat="film in imdb.films | filterTable: filter"
+                        mouseenter mouseleave>
                         <td>{{film.place}}</td>
                         <td>{{film.title}}</td>
                         <td>{{film.year}}</td>
