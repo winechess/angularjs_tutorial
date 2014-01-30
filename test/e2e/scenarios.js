@@ -13,7 +13,7 @@ describe('AngularJS Tutorial app', function() {
         });
         
         it('should filter films by text in input', function() {
-            input('query.$').enter('Побег из Шоушенка');
+            input('filter.query.$').enter('Побег из Шоушенка');
             expect(repeater('tbody tr').count()).toBe(1);
         });
         

@@ -14,7 +14,7 @@
                 <div class="form-group">
                     <label class="control-label col-lg-1">Search: </label>
                     <div class="col-lg-11">
-                        <input type="text" ng-model="query.$" class="form-control" 
+                        <input type="text" ng-model="filter.query.$" class="form-control" 
                                placeholder="Start type..."/>
                     </div>
                 </div>
@@ -58,10 +58,7 @@
                 </thead>
 
                 <tbody>
-                    <tr ng-repeat="film in imdb.films| 
-                                filter: query | 
-                                orderBy: filter.sortBy + filter.orderBy 
-                                | limitTo: filter.limitTo ">
+                    <tr ng-repeat="film in imdb.films | filterTable: filter">
                         <td>{{film.place}}</td>
                         <td>{{film.title}}</td>
                         <td>{{film.year}}</td>
@@ -73,11 +70,7 @@
             <hr/>
             
             <film>Default text here!</film>
-            <div filma>Default text here!</div>
-            <div class='filmc'>Default text here!</div>
-            <!-- directive:filmcom -->
-            <div></div>
-            
+           
         </div>
 
         
