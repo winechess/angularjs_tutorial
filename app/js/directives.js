@@ -9,7 +9,7 @@ app.directive('film', function() {
 app.directive('mouseenter', function(){
    return function(scope, element){
        element.bind('mouseenter', function(){
-           console.log("Cursor enter the element.")
+           element.addClass('active');
        });
    } 
 });
@@ -17,7 +17,7 @@ app.directive('mouseenter', function(){
 app.directive('mouseleave', function(){
    return function(scope, element){
        element.bind('mouseleave', function(){
-           console.log('Cursor leave the element.')
+           element.removeClass('active');
        });
    } 
 });
