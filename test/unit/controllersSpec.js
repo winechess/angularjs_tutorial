@@ -20,7 +20,12 @@ describe('Controller', function() {
         it('should if filter initialized with correct parameters', function(){
            expect(scope.filter.orderBy).toEqual('place');
            expect(scope.filter.sortBy).toEqual('+');
-           expect(scope.filter.limitTo).toEqual(10);
+           expect(scope.filter.limitTo).toEqual(null);
+        });
+        
+        it('should add 2 films to the films list', function(){
+            scope.loadMoreFilms();
+            expect(scope.imdb.films.length).toEqual(12);
         });
     });
 });
