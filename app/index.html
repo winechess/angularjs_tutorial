@@ -41,7 +41,9 @@
                     <label class="control-label col-lg-1">limit</label>
                     <div class="col-lg-2">
                         <select class="form-control" ng-model='filter.limitTo' 
-                                ng-options="i for i in [] | range: 1:10"></select>
+                            ng-options="i for i in [] | range: 1:imdb.films.length">
+                            <option value="">choose limit</option>
+                        </select>
                     </div>
                 </div>
 
@@ -67,14 +69,13 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="btn btn-link center-block" load="loadMoreFilms()">show more</div>
             
             <hr/>
             
             <film>Default text here!</film>
            
         </div>
-
-        
 
         <script src="lib/angular/angular.js" type="text/javascript"></script>
         <script src="js/app.js" type="text/javascript"></script>

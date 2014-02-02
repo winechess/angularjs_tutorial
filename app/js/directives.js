@@ -21,3 +21,11 @@ app.directive('mouseleave', function(){
        });
    } 
 });
+
+app.directive('load', function(){
+    return function(scope, element, attrs){
+       element.bind("click", function(){
+          scope.$apply(attrs.load);
+       });
+    };
+});

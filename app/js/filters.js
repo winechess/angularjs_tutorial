@@ -14,14 +14,16 @@ app.filter('range', function() {
             input.push(i);
         }
         return input;
-    }
+    };
 });
 
 app.filter('filterTable', ['filterFilter','orderByFilter', 'limitToFilter', function(f,o,l){
    return function(films, filter){
        films = f(films, filter.query);
        films = o(films, filter.sortBy + filter.orderBy);
-       films = l(films, filter.limitTo);
+       if(filter.limitTo !== null){
+           films = l(films, filter.limitTo);
+       }
        return films;
    } 
 }]);
