@@ -49,5 +49,10 @@ describe('AngularJS Tutorial app', function() {
         it('should find film directive in the page', function(){
            expect(element('film').html()).toContain('This is film directive!!!'); 
         });
+        
+        it('schould load more films', function(){
+            element('div[load]').click();
+            expect(repeater('tbody tr').count()).toEqual(12);
+        });
     });
 });
