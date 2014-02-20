@@ -1,6 +1,7 @@
 app.directive('film', function() {
     return{
         restrict: 'E',
+        scope: {},
         controller: function($scope){
             $scope.genres = [];
             
