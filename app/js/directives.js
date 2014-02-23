@@ -1,16 +1,14 @@
 app.directive('film', function() {
     return{
         restrict: 'E',
-        scope: {},
-        controller: function($scope){
-            $scope.genres = [];
-            
-            this.addGenres = function(genres){
-                $scope.genres = $scope.genres.concat(genres);
-            };
+        scope: {
+            film: "=value",
+            genres: "@genre",
+            action: "&"
         },
+        templateUrl: "partials/film.html",
+        replace: true,
         link: function(scope, element){
-            element.addClass('info');
             element.bind('mouseenter', function(){
                 console.log(scope.genres);
             });
@@ -18,20 +16,10 @@ app.directive('film', function() {
     };
 });
 
-app.directive('genre', function(){
-    return {
-      require: "film",
-      link: function(scope, element, attrs, filmCtrl){
-       var genres = attrs.genre.split(" ");
-       filmCtrl.addGenres(genres);
-      }
-    };
-});
-
 app.directive('mouseenter', function(){
    return function(scope, element){
        element.bind('mouseenter', function(){
-           element.addClass('active');
+           element.addClass('active-row');
        });
    } 
 });
@@ -39,7 +27,7 @@ app.directive('mouseenter', function(){
 app.directive('mouseleave', function(){
    return function(scope, element){
        element.bind('mouseleave', function(){
-           element.removeClass('active');
+           element.removeClass('active-row');
        });
    } 
 });

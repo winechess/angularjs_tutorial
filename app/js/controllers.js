@@ -8,4 +8,8 @@ app.controller('TopFilmsCtrl', function($scope, TopFilms) {
             {title: 'Звёздные войны. Эпизод 5: Империя наносит ответный удар', year: '1980', rating: 8.8, place: 12}
         );
     };
+    
+    $scope.showGenres = function(values){
+      alert(values);  
+    };
 });

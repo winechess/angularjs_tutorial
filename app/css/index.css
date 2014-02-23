@@ -1,0 +1,20 @@
+.active-row{
+    background-color: #f5f5f5;
+}
+
+.datatable{
+    display: table;
+    padding: 0;
+}
+
+.data-row{
+    display: table-row;
+}
+
+.data-cell{
+    display: table-cell;
+    padding: 8px;
+    line-height: 1.428571429;
+    vertical-align: top;
+    border-top: 1px solid #dddddd;
+}
